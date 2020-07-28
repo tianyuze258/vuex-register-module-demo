@@ -1,12 +1,11 @@
 /**
  * Created by rengar on 2020/7/28.
  */
-let moduleNames = []
-const moduleRegexp = new RegExp(/Module$/)
-
-const registerModule = {
+const __registerModule = {
     install(Vue, options) {
         const {store} = options
+        let moduleNames = []
+        const moduleRegexp = new RegExp(/Module$/)
         // 添加实例上的引用
         Vue.prototype.$registerModule = registerModule
 
@@ -31,6 +30,7 @@ const registerModule = {
             }
             // 注册模块
             store.registerModule(moduleName, moduleStore)
+            console.log('rengar log', store)
             // 自动注销模块，如果需要store持久化，传入
             const {autoUnregister = true} = options
             if (autoUnregister) {
@@ -40,6 +40,7 @@ const registerModule = {
         }
 
         function unregisterModule(moduleName) {
+            console.log('rengar log', 231)
             store.unregisterModule(moduleName)
             // 清除moduleName
             const idx = moduleNames.indexOf(moduleName)
