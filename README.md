@@ -1,0 +1,1 @@
+# vuex-register-module-demo
