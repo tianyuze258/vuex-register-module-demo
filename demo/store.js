@@ -4,7 +4,7 @@
 
 function initialState() {
     return {
-        test: 1,
+        test: 'testState',
     }
 }
 
@@ -13,7 +13,7 @@ const __storeModule = {
     state: initialState(),
     getters: {
         testGetters(state) {
-            return state.test + 'getters'
+            return state.test + 'Getters'
         },
     },
 }
