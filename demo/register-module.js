@@ -29,10 +29,10 @@ void function () {
                 }
                 if (hasModule) {
                     console.warn(`模块${moduleName}已经注册`)
-                    return
+                } else {
+                    // 注册模块
+                    store.registerModule(moduleName, moduleStore)
                 }
-                // 注册模块
-                store.registerModule(moduleName, moduleStore)
                 // 自动注销模块，如果需要store持久化，传入
                 const {autoUnregister = true} = options
                 if (autoUnregister) {
@@ -42,10 +42,12 @@ void function () {
             }
 
             function unregisterModule(moduleName) {
-                store.unregisterModule(moduleName)
                 // 清除moduleName
                 const idx = moduleNames.indexOf(moduleName)
                 moduleNames.splice(idx, 1)
+                if (!moduleNames.includes(moduleName)) {
+                    store.unregisterModule(moduleName)
+                }
             }
         },
     }
