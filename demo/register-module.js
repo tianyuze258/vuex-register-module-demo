@@ -8,7 +8,7 @@ void function () {
 
     window.__registerModule = {
         install(Vue, options) {
-            const {store} = options
+            const { store } = options
             // 添加实例上的引用
             Vue.prototype.$registerModule = registerModule
 
@@ -34,7 +34,7 @@ void function () {
                     store.registerModule(moduleName, moduleStore)
                 }
                 // 自动注销模块，如果需要store持久化，传入
-                const {autoUnregister = true} = options
+                const { autoUnregister = true } = options
                 if (autoUnregister) {
                     moduleNames.push(moduleName)
                     this.$on('hook:beforeDestroy', unregisterModule.bind(this, moduleName))

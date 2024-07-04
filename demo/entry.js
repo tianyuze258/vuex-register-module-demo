@@ -6,7 +6,7 @@ const store = new Vuex.Store({
     state: {},
     modules: {},
 })
-Vue.use(__registerModule, {store})
+Vue.use(__registerModule, { store })
 
 const ComponentTest = {
     computed: {
@@ -20,15 +20,15 @@ const ComponentTest = {
     created() {
         this.$registerModule('storeModule', __storeModule)
         const hasModule = store.hasModule('storeModule')
-        this.$notify({title: 'hook:created', message: `hasModule判断storeModule是否注册: ${hasModule}`})
+        this.$notify({ title: 'hook:created', message: `hasModule判断storeModule是否注册: ${hasModule}` })
     },
     beforeDestroy() {
-        this.$notify({title: 'hook:beforeDestroy', message: '组件、模块注销'})
+        this.$notify({ title: 'hook:beforeDestroy', message: '组件、模块注销' })
     },
     destroyed() {
         this.$nextTick(() => {
             const hasModule = store.hasModule('storeModule')
-            this.$notify({title: 'hook:destroyed', message: `hasModule判断storeModule是否注册: ${hasModule}`})
+            this.$notify({ title: 'hook:destroyed', message: `hasModule判断storeModule是否注册: ${hasModule}` })
         })
     },
 }
@@ -47,17 +47,17 @@ const App = {
     render(h) {
         return h(
             'div', {}, [
-                h(
-                    'el-button',
-                    {
-                        on: {
-                            click: this.handleClick.bind(this),
-                        },
+            h(
+                'el-button',
+                {
+                    on: {
+                        click: this.handleClick.bind(this),
                     },
-                    '点击注销子组件',
-                ),
-                this.isRenderComponent && h(ComponentTest),
-            ],
+                },
+                '点击注销子组件',
+            ),
+            this.isRenderComponent && h(ComponentTest),
+        ],
         )
     },
 }

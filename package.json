@@ -1,0 +1,20 @@
+{
+  "name": "vuex-register-module-demo",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.4.29"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.5",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^9.6.0",
+    "vite": "^5.3.1"
+  }
+}

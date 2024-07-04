@@ -1,33 +1,24 @@
-.DS_Store
-node_modules
-/dist
-__external-libraries
-backup
-
-# local env files
-.env.local
-.env.*.local
-GitCommitMessage.template
-.deploy.config.js
-
-# Log files
+# Logs
+logs
+*.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
 
 # Editor directories and files
+.vscode/*
+!.vscode/extensions.json
 .idea
+.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw*
-git-helper
-
-# dll
-public/vendor/**/*
-build/vendor-manifest.json
-
-# yarn
-yarn-debug.log*
-yarn-error.log*
-yarn.lock
-.yarnrc
+*.sw?
